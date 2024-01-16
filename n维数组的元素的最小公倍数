@@ -1,0 +1,23 @@
+#include<stdio.h>
+int Gbs(int x, int y)
+{
+	int a = x, b = y;
+	int c;
+	while (c = y % x)
+	{
+		y = x;
+		x = c;
+	}
+	return a * b / x;
+}
+int main()
+{
+	int a[5] = { 1,2,3,4,5 };
+	int b = Gbs(a[0], a[1]);
+	for (int i = 2; i < 5; i++)
+	{
+		b = Gbs(b, a[i]);
+	}
+	printf("%d\n", b);
+	return 0;
+}
